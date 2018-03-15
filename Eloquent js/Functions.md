@@ -71,3 +71,38 @@ console.log(twice(5));
 ```
 
 In the example, `multiplier` is called, and creates an environment in which its `factor` parameter is bound to 2. The function value it returns, which is stored in `twice`, remembers this environment. So when that is called, it multiplies its argument by 2.
+
+#### Exercises
+
+```javascript
+const min = (x, y) => {
+  return x < y ? x : y
+}
+console.log(min(-8, 7))
+
+const isEven = function (n) {
+  if (n < 0) n = -n
+  if (n === 0) return true
+  else if (n === 1) return false
+  return isEven(n - 2)
+}
+
+console.log(isEven(-1))
+
+const countChar = (s, x) => {
+  let counter = 0
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === x) counter++
+  }
+  return counter
+}
+
+const countBs = s => {
+  return countChar(s, 'B')
+}
+
+console.log(countBs('skcjowBcibbBBBcios'))
+console.log(countChar("kakkerlak", "k"));
+
+```
+
