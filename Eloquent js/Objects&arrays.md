@@ -129,7 +129,7 @@ const reverseArrayInPlace = x => {
   return x
 }
 
-// A List
+// A List - How a link list can be represented i
 const arrayToList = x => {
   if (x.length === 0) return null
   return {

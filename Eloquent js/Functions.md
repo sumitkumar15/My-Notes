@@ -24,6 +24,8 @@ approach to binding visibility is called *lexical scoping*.
 
 ### Arrow Functions
 
+An **arrow function expression** has a shorter syntax than a [function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function) and does not have its own `this`, [arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments), [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super), or [new.target](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target). These function expressions are best suited for non-method functions, and they cannot be used as constructors.[From MDN]
+
 ```javascript
 const power = (base, exponent) => {
   let result = 1;
@@ -36,7 +38,19 @@ const power = (base, exponent) => {
 
 For single param the parenthesis can be omitted around parameter list.
 
-Arrow functions were added in 2015
+Arrow Function with no params
+
+`const sayHello = () => {console.log('Hello')}`
+
+An arrow function cannot contain a line break between its parameters and its arrow.
+
+```javascript
+var func = ()
+           => 1; 
+// SyntaxError: expected expression, got '=>'
+```
+
+Arrow functions were added in ECMAScript 2015
 
 ### Optional Arguments
 

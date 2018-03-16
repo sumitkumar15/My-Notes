@@ -66,7 +66,7 @@ The `null` in the first expression becomes `0`, and the `"5"` in the second expr
 
 In the third expression, `+` tries string concatenation before numeric addition, so the `1` is converted to `"1"` (from number to string).
 
-<!--The rules for converting strings and numbers to Boolean values state that `0`, `NaN`, and the empty string (`""`) count as `false`, while all the other values count as `true`. Because of this, expressions like `0 == false` and `"" == false` are also true. When you do *not* want any automatic type conversions to happen, there are two additional operators: `===` and `!==`. The first tests whether a value is *precisely* equal to the other, and the second tests whether it is not precisely equal.-->
+> The rules for converting strings and numbers to Boolean values state that `0`, `NaN`, and the empty string (`""`) count as `false`, while all the other values count as `true`. Because of this, expressions like `0 == false` and `"" == false` are also true. When you do *not* want any automatic type conversions to happen, there are two additional operators: `===` and `!==`. The first tests whether a value is *precisely* equal to the other, and the second tests whether it is not precisely equal.
 
 ### Short-circuiting of logical operators
 

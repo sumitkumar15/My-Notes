@@ -1,3 +1,5 @@
+#### Useful Functions
+
 #### Exercises
 
 ```javascript
