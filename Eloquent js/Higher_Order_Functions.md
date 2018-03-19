@@ -1,4 +1,6 @@
-#### Useful Functions
+#### Higher Order Functions
+
+Functions that operate on other functions, either by taking them as arguments or by returning them, are called *higher-order functions*. 
 
 #### Exercises
 
@@ -30,6 +32,17 @@ const every = (array, test) => {
 //**
 const everysome = (array, test) => {
   return !array.some(e => !test(e))
+}
+
+// Dominant Direction
+function dominantDirection(text) {
+  let arr = text.split('')
+  let counts = countBy(arr, c => {
+    let script = characterScript(c.codePointAt(0))
+    return script ? script.direction : 'none'
+  }).filter(e => e.name !== 'none').reduce((k, v) => {
+  return k.count >= v.count ? k : v)
+  return counts.name
 }
 ```
 
