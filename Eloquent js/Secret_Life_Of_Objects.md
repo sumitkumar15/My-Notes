@@ -96,5 +96,84 @@ console.log("Is Jack's age known?", ages.has("Jack"));
 
 provides set get & has as part of interface of Map Object
 
-#### 
+#### Exercises
+
+```javascript
+class Vec {
+  constructor (x, y) {
+    this.x = x
+    this.y = y
+  }
+  plus (v) {
+    return new Vec(this.x + v.x, this.y + v.y)
+  }
+  minus (v) {
+    return new Vec(this.x - v.x, this.y - v.y)
+  }
+  get length () {
+    return Math.sqrt(this.x * this.x + this.y * this.y)
+  }
+}
+
+// Groups
+class Group {
+  constructor () {
+    this.x = []
+    this.size = 0
+  }
+  add (val) {
+    if (!this.x.some(k => k === val)) {
+      this.size++
+      return this.x.push(val)
+    }
+  }
+  delete (val) {
+    for (let k = 0; k < this.x.length; k++) {
+      if (this.x[k] === val) {
+        this.x.splice(k, 1)
+        this.size--
+        return true
+      }
+    }
+    return false
+  }
+  has (val) {
+    for (let x of this.x) {
+      if (x === val) return true
+    }
+    return false
+  }
+  static from (iter) {
+    let n = new Group()
+    iter.forEach(element => {
+      n.add(element)
+    })
+    return n
+  }
+  [Symbol.iterator] () {
+    return new GroupIterator(this)
+  }
+}
+
+// Iterable Groups
+class GroupIterator {
+  constructor (group) {
+    this.iter = 0
+    this.group = group
+  }
+  next () {
+    if (this.iter === this.group.size) {
+      return {done: true}
+    }
+    let val = this.group.x[this.iter]
+    this.iter++
+    return {
+      done: false,
+      value: val
+    }
+  }
+}
+// Borrowing a method
+Object.prototype.hasOwnProperty.call(a,'hasOwnProperty')
+```
 
